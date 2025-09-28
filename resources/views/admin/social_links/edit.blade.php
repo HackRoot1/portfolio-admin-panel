@@ -16,10 +16,11 @@
                             <form method="POST" action="{{ route('admin.social_links.update', $socialLink->id) }}">
                                 @csrf
                                 @method('PUT')
+                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                 <div class="mb-3">
-                                    <label class="form-label" for="name">Platform Name</label>
-                                    <input type="text" class="form-control" id="name" name="name"
-                                        value="{{ $socialLink->name }}" required>
+                                    <label class="form-label" for="platform_name">Platform Name</label>
+                                    <input type="text" class="form-control" id="platform_name" name="platform_name"
+                                        value="{{ $socialLink->platform_name }}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label class="form-label" for="url">URL</label>
@@ -27,9 +28,9 @@
                                         value="{{ $socialLink->url }}" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="icon">Icon Class</label>
-                                    <input type="text" class="form-control" id="icon" name="icon"
-                                        value="{{ $socialLink->icon }}">
+                                    <label class="form-label" for="icon_class">Icon Class</label>
+                                    <input type="text" class="form-control" id="icon_class" name="icon_class"
+                                        value="{{ $socialLink->icon_class }}">
                                     <small class="form-text text-muted">Use FontAwesome or Feather icon class.</small>
                                 </div>
                                 <div class="mb-3">

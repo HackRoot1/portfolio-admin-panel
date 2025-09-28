@@ -13,9 +13,10 @@
                         <div class="card-body">
                             <form method="POST" action="{{ route('admin.social_links.store') }}">
                                 @csrf
+                                <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                 <div class="mb-3">
-                                    <label class="form-label" for="name">Platform Name</label>
-                                    <input type="text" class="form-control" id="name" name="name"
+                                    <label class="form-label" for="platform_name">Platform Name</label>
+                                    <input type="text" class="form-control" id="platform_name" name="platform_name"
                                         placeholder="e.g. Facebook" required>
                                 </div>
                                 <div class="mb-3">
@@ -24,8 +25,8 @@
                                         placeholder="https://facebook.com/yourprofile" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label class="form-label" for="icon">Icon Class</label>
-                                    <input type="text" class="form-control" id="icon" name="icon"
+                                    <label class="form-label" for="icon_class">Icon Class</label>
+                                    <input type="text" class="form-control" id="icon_class" name="icon_class"
                                         placeholder="e.g. fab fa-facebook">
                                     <small class="form-text text-muted">Use FontAwesome or Feather icon class.</small>
                                 </div>

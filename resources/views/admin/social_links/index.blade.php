@@ -47,9 +47,9 @@
                                     @forelse ($socialLinks as $key => $link)
                                         <tr>
                                             <td><strong>{{ $key + 1 }}</strong></td>
-                                            <td>{{ $link->name }}</td>
+                                            <td>{{ $link->platform_name }}</td>
                                             <td>{{ $link->url }}</td>
-                                            <td>{{ $link->icon }}</td>
+                                            <td>{{ $link->icon_class }}</td>
                                             <td>{{ $link->icon_color }}</td>
                                             <td>{{ $link->created_at->format('Y-m-d') }}</td>
                                             <td>

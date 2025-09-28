@@ -23,9 +23,10 @@ class SocialLinkController extends Controller
     {
         // Validate and store the new social link
         $request->validate([
-            'name' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id',
+            'platform_name' => 'required|string|max:255',
             'url' => 'required|url|max:255',
-            'icon' => 'nullable|string|max:255',
+            'icon_class' => 'nullable|string|max:255',
             'icon_color' => 'nullable|string|max:7', // Assuming hex color code
         ]);
 
@@ -44,9 +45,10 @@ class SocialLinkController extends Controller
     {
         // Validate and update the social link
         $request->validate([
-            'name' => 'required|string|max:255',
+            'user_id' => 'required|exists:users,id',
+            'platform_name' => 'required|string|max:255',
             'url' => 'required|url|max:255',
-            'icon' => 'nullable|string|max:255',
+            'icon_class' => 'nullable|string|max:255',
             'icon_color' => 'nullable|string|max:7', // Assuming hex color code
         ]);
 
