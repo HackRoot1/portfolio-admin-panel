@@ -4,7 +4,8 @@
     <main class="content">
         <div class="container-fluid p-0">
 
-            <a href="{{ route('admin.social_links.create') }}" class="btn btn-primary float-end mt-n1"><i class="fas fa-plus"></i> New Social Link</a>
+            <a href="{{ route('admin.social_links.create') }}" class="btn btn-primary float-end mt-n1"><i
+                    class="fas fa-plus"></i> New Social Link</a>
             <div class="mb-3">
                 <h1 class="h3 d-inline align-middle">Social Links List</h1>
             </div>
@@ -36,30 +37,40 @@
                                         <th>Platform Name</th>
                                         <th>URL</th>
                                         <th>Icon/Class</th>
+                                        <th>Icon Color</th>
                                         <th>Added Date</th>
                                         <th>Status</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td><strong>#0001</strong></td>
-                                        <td><img src="./img/avatars/avatar-2.jpg" width="50" alt=""></td>
-                                        <td>Brian Smith</td>
-                                        <td>brian@gmail.com</td>
-                                        <td>2023-12-05</td>
-                                        <td>
-                                            <div class="form-check form-switch">
-                                                <input class="form-check-input" checked type="checkbox" id="view_admin">
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <a href="view-staff.php" class="btn btn-primary btn-sm">View</a>
-                                            <a href="edit-staff.php" class="btn btn-primary btn-sm">Edit</a>
-                                            <a href="#" class="btn btn-primary btn-sm">Delete</a>
-                                        </td>
-                                    </tr>
-                                    
+                                    @forelse ($socialLinks as $key => $link)
+                                        <tr>
+                                            <td><strong>{{ $key + 1 }}</strong></td>
+                                            <td>{{ $link->name }}</td>
+                                            <td>{{ $link->url }}</td>
+                                            <td>{{ $link->icon }}</td>
+                                            <td>{{ $link->icon_color }}</td>
+                                            <td>{{ $link->created_at->format('Y-m-d') }}</td>
+                                            <td>
+                                                <div class="form-check form-switch">
+                                                    <input class="form-check-input" checked type="checkbox" id="view_admin">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <a href="{{ route('admin.social_links.edit', $link->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                                <form action="{{ route('admin.social_links.delete', $link->id) }}" method="POST" class="d-inline">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-primary btn-sm">Delete</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="8" class="text-center">No social links found.</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

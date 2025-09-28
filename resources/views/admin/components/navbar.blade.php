@@ -82,7 +82,7 @@
             
             <li class="nav-item dropdown">
                 <a class="nav-icon pe-md-0 dropdown-toggle" href="#" data-bs-toggle="dropdown">
-                    <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded" alt="Charles Hall" />
+                    <img src="{{ asset('admin/img/avatars/avatar.jpg') }}" class="avatar img-fluid rounded" alt="Charles Hall" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
                     <a class='dropdown-item' href='profile.php'><i class="align-middle me-1" data-feather="user"></i> Profile</a>

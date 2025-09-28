@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class SocialLink extends Model
 {
     //
+    protected $fillable = ['name', 'url', 'icon', 'icon_color'];
+    
 }

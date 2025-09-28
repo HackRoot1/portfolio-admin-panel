@@ -26,6 +26,7 @@ class SocialLinkController extends Controller
             'name' => 'required|string|max:255',
             'url' => 'required|url|max:255',
             'icon' => 'nullable|string|max:255',
+            'icon_color' => 'nullable|string|max:7', // Assuming hex color code
         ]);
 
         SocialLink::create($request->all());
@@ -46,6 +47,7 @@ class SocialLinkController extends Controller
             'name' => 'required|string|max:255',
             'url' => 'required|url|max:255',
             'icon' => 'nullable|string|max:255',
+            'icon_color' => 'nullable|string|max:7', // Assuming hex color code
         ]);
 
         $socialLink = SocialLink::findOrFail($id);

@@ -12,7 +12,7 @@
     <meta name="keywords" content="">
 
     <link rel="preconnect" href="https://fonts.gstatic.com/">
-    <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
+    <link rel="shortcut icon" href="{{ asset('admin/img/icons/icon-48x48.png') }}" />
 
     <link rel="canonical" href="index.html" />
 
@@ -20,7 +20,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&amp;display=swap" rel="stylesheet">
 
-    <link class="js-stylesheet" href="css/light.css" rel="stylesheet">
+    <link class="js-stylesheet" href="{{ asset('admin/css/light.css') }}" rel="stylesheet">
     <style>
         body {
             opacity: 0;
@@ -59,9 +59,9 @@
     </div>
 
 {{-- Footer Section --}}
-<script src="js/app.js"></script>
+<script src="{{ asset('admin/js/app.js') }}"></script>
 
-<script src="js/datatables.js"></script>
+<script src="{{ asset('admin/js/datatables.js') }}"></script>
 
 <script>
 	document.addEventListener("DOMContentLoaded", function() {
