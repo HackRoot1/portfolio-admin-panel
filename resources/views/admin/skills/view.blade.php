@@ -1,4 +1,63 @@
-<?php include('./layouts/header.php'); ?>
+@extends('admin.layouts.master')
+
+@section('main-content')
+<div class="container-fluid p-0">
+
+    <h1 class="h3 mb-3">Skill Detail</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-title mb-0">Skill Information:</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <span><b>Name:</b></span>
+                            <span>{{ $skill->name }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Category:</b></span>
+                            <span>{{ $skill->category ?? 'Uncategorized' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Level:</b></span>
+                            <span>{{ $skill->level ?? 'N/A' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Icon:</b></span>
+                            <span>{{ $skill->icon ?? 'N/A' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Color:</b></span>
+                            <span>{{ $skill->color ?? 'N/A' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Status:</b></span>
+                            <span>{{ $skill->is_active ? 'Active' : 'Inactive' }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Sort Order:</b></span>
+                            <span>{{ $skill->sort_order }}</span>
+                        </div>
+                        <div class="col-md-6">
+                            <span><b>Created At:</b></span>
+                            <span>{{ $skill->created_at->format('d M Y') }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-3">
+        <a href="{{ route('admin.skills.index') }}" class="btn btn-secondary">Back to Skills</a>
+        <a href="{{ route('admin.skills.edit', $skill->id) }}" class="btn btn-primary">Edit Skill</a>
+    </div>
+
+</div>
+@endsection<?php include('./layouts/header.php'); ?>
 
 <div class="wrapper">
     <?php include('./components/sidebar.php') ?>

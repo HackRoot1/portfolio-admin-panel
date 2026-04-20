@@ -23,7 +23,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class='sidebar-link' href='roles.php'>
+                <a class='sidebar-link' href='{{ route('admin.personal.info') }}'>
                     <i class="align-middle" data-feather="info"></i> <span class="align-middle">About</span>
                 </a>
             </li>
@@ -39,7 +39,7 @@
             </li>
 
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-in.php'>
+                <a class='sidebar-link' href='{{ route('admin.skills.index') }}'>
                     <i class="align-middle" data-feather="star"></i> <span class="align-middle">Skills
                     </span>
                 </a>
@@ -49,7 +49,7 @@
                 Projects
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.projects.index') }}'>
                     <i class="align-middle" data-feather="folder"></i> <span class="align-middle">Projects
                     </span>
                 </a>
@@ -59,7 +59,7 @@
                 Certifications
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.certifications.index') }}'>
                     <i class="align-middle" data-feather="award"></i> <span class="align-middle">Certifications
                     </span>
                 </a>
@@ -69,7 +69,7 @@
                 Education
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.educations.index') }}'>
                     <i class="align-middle" data-feather="book"></i> <span class="align-middle">Education
                     </span>
                 </a>
@@ -79,7 +79,7 @@
                 Professional Experience
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.experiences.index') }}'>
                     <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">Professional Experience
                     </span>
                 </a>
@@ -89,7 +89,7 @@
                 Achievements/Awards
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.achievements.index') }}'>
                     <i class="align-middle" data-feather="gift"></i> <span class="align-middle">Achievements/Awards
                     </span>
                 </a>
@@ -99,7 +99,7 @@
                 Contact Info
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.contacts.index') }}'>
                     <i class="align-middle" data-feather="mail"></i> <span class="align-middle">Contact Info
                     </span>
                 </a>
@@ -109,7 +109,7 @@
                 Testimonials
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.testimonials.index') }}'>
                     <i class="align-middle" data-feather="message-square"></i> <span class="align-middle">Testimonials
                     </span>
                 </a>
@@ -119,7 +119,7 @@
                 Page Settings
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.page_settings.index') }}'>
                     <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Page Settings
                     </span>
                 </a>
@@ -129,7 +129,7 @@
                 Site Settings
             </li>
             <li class="sidebar-item">
-                <a class='sidebar-link' href='sign-up.php'>
+                <a class='sidebar-link' href='{{ route('admin.site_settings.index') }}'>
                     <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Site Settings
                     </span>
                 </a>

@@ -13,26 +13,27 @@ return new class extends Migration
     {
         Schema::create('skills', function (Blueprint $table) {
             $table->id();
+            $table->string('icon')->nullable();
             // Skill name
             $table->string('name');
             // Category (Frontend / Backend / Tools etc.)
             $table->string('category')->nullable();
             // Icon (can store class name or image path)
-            $table->string('icon')->nullable();
+            $table->string('icon_class')->nullable();
             // Skill color (hex code or color name)
-            $table->string('color', 20)->nullable();
+            $table->string('icon_color', 20)->nullable();
             // Skill level (Beginner, Intermediate, Expert)
             $table->string('level', 50)->nullable();
             // Optional for ordering on frontend
-            $table->unsignedInteger('sort_order')->default(0);
+            $table->unsignedInteger('sort_order')->default(1);
             // Optional: status field for enabling/disabling
-            $table->boolean('is_active')->default(true);
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
 
             // Indexes
             $table->index(['name']);
             $table->index(['category']);
-            $table->index(['is_active']); 
+            $table->index(['status']); 
         });
     }
 

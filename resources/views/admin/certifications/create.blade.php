@@ -21,9 +21,9 @@
                             <div class="card-body">
                                 <form>
                                     <div class="mb-3">
-											<label class="form-label" for="profile">Profile Pic</label>
-											<input class="form-control" name="profile" id="profile" accept=".png, .jpg, .jpeg, .webp" type="file">
-										</div>
+                                        <label class="form-label" for="profile">Profile Pic</label>
+                                        <input class="form-control" name="profile" id="profile" accept=".png, .jpg, .jpeg, .webp" type="file">
+                                    </div>
                                     <div class="row">
                                         <div class="mb-3 col-md-6">
                                             <label class="form-label" for="first_name">First Name</label>

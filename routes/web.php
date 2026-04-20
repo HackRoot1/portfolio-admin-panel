@@ -1,29 +1,27 @@
 <?php
 
-use App\Models\Skill;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AchievementController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\SkillController;
+use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
-use App\Http\Controllers\SocialLinkController;
-use App\Http\Controllers\AchievementController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PageSettingController;
+use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SiteSettingController;
+use App\Http\Controllers\SkillController;
+use App\Http\Controllers\SocialLinkController;
 use App\Http\Controllers\TestimonialController;
-use App\Http\Controllers\CertificationController;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/miniprojects', function () {
     return view('mini-projects');
 })->name('miniprojects');
 
-
-// Admin Routes 
+// Admin Routes
 Route::prefix('admin')->group(function () {
 
     Route::controller(AdminController::class)->group(function () {
@@ -44,6 +42,7 @@ Route::prefix('admin')->group(function () {
         Route::get('/skills', 'index')->name('admin.skills.index');
         Route::get('/skills/create', 'create')->name('admin.skills.create');
         Route::post('/skills', 'store')->name('admin.skills.store');
+        Route::get('/skills/{id}', 'show')->name('admin.skills.view');
         Route::get('/skills/{id}/edit', 'edit')->name('admin.skills.edit');
         Route::put('/skills/{id}', 'update')->name('admin.skills.update');
         Route::delete('/skills/{id}', 'destroy')->name('admin.skills.delete');
@@ -130,9 +129,10 @@ Route::prefix('admin')->group(function () {
         Route::delete('/site-settings/{id}', 'destroy')->name('admin.site_settings.delete');
     });
 
-    Route::get('/logout', function() {
+    Route::get('/logout', function () {
         // Perform logout logic here (e.g., Auth::logout())
         Auth::logout();
+
         return redirect()->route('home');
     })->name('admin.logout');
 });
